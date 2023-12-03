@@ -25,6 +25,7 @@ services:
       - /home/daniyal/.bash_history_docker:/root/.bash_history
     depends_on:
       - database
+      - redis
   nginx:
     container_name: nginx
     image: nginx:stable-alpine
@@ -36,3 +37,6 @@ services:
     depends_on:
       - php
       - database
+  redis:
+    image: redis:latest
+    container_name: redis
